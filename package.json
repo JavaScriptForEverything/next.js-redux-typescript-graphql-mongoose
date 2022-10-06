@@ -12,6 +12,7 @@
     "@emotion/styled": "^11.10.4",
     "@mui/material": "^5.10.8",
     "@types/validator": "^13.7.7",
+    "eslint-plugin-testing-library": "^5.7.2",
     "next": "latest",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
