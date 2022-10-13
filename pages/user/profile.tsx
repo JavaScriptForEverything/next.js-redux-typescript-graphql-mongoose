@@ -1,10 +1,8 @@
 import Typography from '@mui/material/Typography'
 import { gql, useQuery } from '@apollo/client'
 
-export type User = {
-	name: string
-	email: string
-}
+import { User } from 'shared/types/user'
+
 
 export type GetUser = {
 	user: User

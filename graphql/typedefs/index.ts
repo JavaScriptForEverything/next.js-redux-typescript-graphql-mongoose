@@ -6,6 +6,10 @@ export const rootTypeDefs = gql`
 	type Query {
 		_: String
 	}
+
+	type Mutation {
+		_: String
+	}
 `
 
 export const typeDefs = [ rootTypeDefs, userTypeDefs ]

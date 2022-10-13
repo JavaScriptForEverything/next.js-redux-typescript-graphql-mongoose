@@ -19,6 +19,7 @@
     "graphql": "^16.6.0",
     "micro": "^9.4.1",
     "micro-cors": "^0.1.1",
+    "mongoose": "^6.6.5",
     "next": "latest",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
