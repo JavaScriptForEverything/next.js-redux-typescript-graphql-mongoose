@@ -2,16 +2,18 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["components/*"],
-      "@/pages/*" : ["pages/*"],
-
-      "@layout/*" : ["layout/*"],
-      "@docs/*" 	: ["docs/*"],
-      "@util/*" 	: ["util/*"],
+      "@/components/*": [ "components/*" ],
+      "@/pages/*": [ "pages/*" ],
+      "@layout/*": [ "layout/*" ],
+      "@docs/*": [ "docs/*" ],
+      "@util/*": [ "util/*" ]
     },
-
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -25,6 +27,13 @@
     "jsx": "preserve",
     "incremental": true,
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types.d.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "types.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

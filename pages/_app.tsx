@@ -1,5 +1,6 @@
 import { NextPage } from 'next'
 import type { AppProps } from 'next/app'
+import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client'
 
 import Layout from './layout'
 
@@ -13,16 +14,32 @@ type AppPropsWithLayout = AppProps & {
 	Component: NextPageWithLayout
 }
 
+
+const client = new ApolloClient({
+	uri: 'http://localhost:3000/api/graphql',
+	cache: new InMemoryCache()
+})
+
+
+
+
 const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
 
-	if(Component.getLayout) return Component.getLayout(<Component {...pageProps} />)
+	// Step-2: Wrap Component Base Layout under ApolloProvider
+	if(Component.getLayout) return (
+		<ApolloProvider client={client}>
+			Component.getLayout(<Component {...pageProps} />)
+		</ApolloProvider>
+	)
 
+
+	// Step-1: Wrap Global Layout under ApolloProvider
   return (
-		<>
+		<ApolloProvider client={client}>
 			<Layout>
 				<Component {...pageProps} />
 			</Layout>
-		</>
+		</ApolloProvider>
 	)
 }
 export default MyApp

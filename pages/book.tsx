@@ -18,6 +18,7 @@ const Book = () => {
 
 			<Image 
 				src={img} 
+				alt=''
 				width={500}
 				height={300}
 				placeholder='blur'
