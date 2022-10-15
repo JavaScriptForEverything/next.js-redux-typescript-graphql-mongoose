@@ -12,6 +12,7 @@
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@mui/material": "^5.10.8",
+    "@reduxjs/toolkit": "^1.8.6",
     "@types/micro-cors": "^0.1.2",
     "@types/validator": "^13.7.7",
     "apollo-server-micro": "^3.10.3",
@@ -21,8 +22,10 @@
     "micro-cors": "^0.1.1",
     "mongoose": "^6.6.5",
     "next": "latest",
+    "next-redux-wrapper": "^8.0.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-redux": "^8.0.4",
     "validator": "^13.7.0"
   },
   "devDependencies": {

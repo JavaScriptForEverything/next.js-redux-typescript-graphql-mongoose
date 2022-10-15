@@ -1,6 +1,9 @@
 import { useQuery } from '@apollo/client'
 import { UserDocument } from 'shared/types/user'
 import { GET_USERS_QUERY } from 'graphql/queries'
+import { useSelector } from 'react-redux'
+import { RootState, wrapper } from 'store'
+import  * as userReducer from 'store/userReducer'
 
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
@@ -10,6 +13,9 @@ type GetUsers = {
 }
 
 const HomePage = () => {
+	const { user } = useSelector( (state: RootState) => state.user )
+	console.log({ user })
+
 	const { data } = useQuery<GetUsers>(GET_USERS_QUERY) 
 	if( !data ) return <>Loading</>
 
@@ -25,3 +31,13 @@ const HomePage = () => {
 	)
 }
 export default HomePage
+
+
+export const getServerSideProps = wrapper.getServerSideProps( ({ dispatch }) => async () => {
+	await dispatch(userReducer.getUserById())
+
+	return { 				// return { props: {} } mandatory even though did not return anything
+		props: { }
+	}
+
+})

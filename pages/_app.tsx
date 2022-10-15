@@ -2,6 +2,7 @@ import { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client'
 
+import { wrapper } from 'store'
 import Layout from './layout'
 
 
@@ -42,7 +43,8 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
 		</ApolloProvider>
 	)
 }
-export default MyApp
+// export default MyApp
+export default wrapper.withRedux(MyApp)
 
 
 /*
