@@ -246,15 +246,37 @@ export const getUserById = () => async (dispatch: AppDispatch) => {
 
 
 
-##### /pages/\__app.tsx
+##### /pages/\__app.tsx 	: use new Hook Style instead of Old HOC Style
+
+###### Old HOC Style
 ```
 import type { AppProps } from 'next/app'
+import { Wrapper } from '@store/index'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
 
   return <Component {...pageProps} />
 }
 export default wrapper.withRedux(MyApp)
+```
+
+###### New Hook Style
+```
+import type { AppProps } from 'next/app'
+import { Provider as ReduxProvider } from 'react-redux
+import { Wrapper } from '@store/index'
+
+const MyApp = ({ Component, ...rest }: AppProps) => {
+	const { store, props } = wrapper.useWrappedStore( rest )
+	const { pageProps } = props
+
+  return (
+		<ReduxProvider store={store}>
+			<Component {...pageProps} />
+		</ReduxProvider>
+	)
+}
+export default MyApp
 ```
 
 

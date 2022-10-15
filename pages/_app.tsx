@@ -2,6 +2,7 @@ import { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client'
 
+import { Provider as ReduxProvider } from 'react-redux'
 import { wrapper } from '@store/index'
 import Layout from '@layout/index'
 
@@ -24,27 +25,32 @@ const client = new ApolloClient({
 
 
 
-const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
+const MyApp = ({ Component, ...rest }: AppPropsWithLayout) => {
+	const { store, props } = wrapper.useWrappedStore(rest)
+	const { pageProps } = props
 
 	// Step-2: Wrap Component Base Layout under ApolloProvider
 	if(Component.getLayout) return (
-		<ApolloProvider client={client}>
-			Component.getLayout(<Component {...pageProps} />)
-		</ApolloProvider>
+		<ReduxProvider store={store}>
+			<ApolloProvider client={client}>
+				Component.getLayout(<Component {...pageProps} />)
+			</ApolloProvider>
+		</ReduxProvider>
 	)
 
 
 	// Step-1: Wrap Global Layout under ApolloProvider
   return (
-		<ApolloProvider client={client}>
-			<Layout>
-				<Component {...pageProps} />
-			</Layout>
-		</ApolloProvider>
+		<ReduxProvider store={store}>
+			<ApolloProvider client={client}>
+				<Layout>
+					<Component {...pageProps} />
+				</Layout>
+			</ApolloProvider>
+		</ReduxProvider>
 	)
 }
-// export default wrapper.withRedux(MyApp)
-export default wrapper.withRedux(MyApp)
+export default MyApp
 
 
 /*
