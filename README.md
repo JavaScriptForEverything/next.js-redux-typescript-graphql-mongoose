@@ -1,4 +1,30 @@
 ## Next.JS-Redux-TypeScript-GraphQL-Mongoose
+
+<img
+	width = "100%"
+	src="https://github.com/JavaScriptForEverything/next.js-redux-typescript-graphql-mongoose/blob/main/public/githubCoverPhoto.png"
+	alt="githubCoverPhoto-MaterialUI.png"
+/>
+<br />
+
+
+###### Features Added
+	. Next.js With TypeScript
+	. GraphQL Server + Client
+	. Redux Client-Side Dispatch + Server-Side Dispatch
+	. MongoDB Database with `mongoose` driver
+	. Dynamic Login Form + Validation
+
+	. SSR, SSG, ISR, Preview Mode
+	. Layout: Global Layout + Component Based Layout
+	. Re-export
+	. Absolute Import instead of relative import
+	. ESLint
+
+
+
+###### Project Structure
+
 ```
 $ tree -I 'node_modules|.git|.next|public' 	// => print directory but exclude given folders
 .
@@ -97,7 +123,7 @@ $ tree -I 'node_modules|.git|.next|public' 	// => print directory but exclude gi
 
 ### Enable TypeScript
 ```
-$ touch tsconfig.json 					// => Empty file auto-generate by next.js
+$ touch tsconfig.json 					// => Will auto-generate by next.js
 $ yarn dev 						// => Throw Error: need to install some packages
 $ yarn add -D typescript @types/node @types/react 	// => copy paste or type bello packages
 $ yarn dev 						// => Populate tsconfig.json file
@@ -221,8 +247,8 @@ const { reducer, actions } = createSlice({
 	extraReducers: {
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		[HYDRATE]: (state, action: PayloadAction<any>) => ({
-			...state, 												// state = all slices: userSlice + productSlice + ...
-			user: { 													// userSlice
+			...state, 		// state = all slices: userSlice + productSlice + ...
+			user: { 		// userSlice
 				...state.user, 			// copy previouse state of userSlice
 				...action.payload.user.user 	// override by allSlice.userSlice.userObject
 			}
