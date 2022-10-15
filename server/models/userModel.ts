@@ -1,8 +1,8 @@
 import { Schema, model, models, Model } from 'mongoose'
-import { User } from 'shared/types/user'
+import { UserDocument } from 'shared/types/user'
 
 
-const userSchema = new Schema<User>({
+const userSchema = new Schema<UserDocument>({
 	name: {
 		type: String,
 		trim: true,
@@ -17,5 +17,5 @@ const userSchema = new Schema<User>({
 	timestamps: true
 })
 
-const userModel: Model<User> = models.User || model<User>('User', userSchema)
+const userModel: Model<UserDocument> = models.User || model<UserDocument>('User', userSchema)
 export default userModel

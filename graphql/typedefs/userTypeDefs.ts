@@ -2,7 +2,7 @@ import { gql } from 'apollo-server-micro'
 
 export const userTypeDefs = gql`
 	extend type Query {
-		user: User
+		user(userId: ID!): User
 		users: [User]!
 	}
 	extend type Mutation {

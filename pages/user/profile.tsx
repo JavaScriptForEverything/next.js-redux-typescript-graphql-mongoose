@@ -1,24 +1,16 @@
+import { useQuery } from '@apollo/client'
+import { UserDocument } from 'shared/types/user'
+import { GET_USER_ById_QUERY } from 'graphql/queries'
+
 import Typography from '@mui/material/Typography'
-import { gql, useQuery } from '@apollo/client'
-
-import { User } from 'shared/types/user'
-
 
 export type GetUser = {
-	user: User
+	user: UserDocument
 }
 
-export const GET_USER = gql`
-	query {
-		user {
-			name
-			email
-		}
-	}
-`
 
 const UserProfile = () => {
-	const { loading, data, error } = useQuery<GetUser>(GET_USER)
+	const { loading, data, error } = useQuery<GetUser>(GET_USER_ById_QUERY)
 
 	if(!data || error) return <>Loading: {loading}</>
 

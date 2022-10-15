@@ -10,25 +10,20 @@ type ArgumentProps = {
 
 export const userResolvers = {
 	Query: {
-		user: async () => {
-			// const user = await User.findOne()
+		user: async (_: undefined, arg: { userId: string }) => {
+			const user = await User.findById(arg.userId)
 			// console.log(user)
-			// return user
+			return user
 
-			return {
-				id: '1',
-				name: 'riajul',
-				email: 'riajul@gmail.com'
-			}
+			// return {
+			// 	id: '1',
+			// 	name: 'riajul',
+			// 	email: 'riajul@gmail.com'
+			// }
 		},
 
 		users: async () => {
 			const users = await User.find()
-
-			users.map(user => {
-				console.log(user.email)
-			})
-
 			return users
 		}
 
