@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 
-import img from 'public/books/1.jpg'
+import img from '@public/books/1.jpg'
 
 const books = ['1', '2', '3', '4', '5', '6']
 

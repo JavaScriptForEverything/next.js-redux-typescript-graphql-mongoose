@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { createWrapper } from 'next-redux-wrapper'
 
-import userReducer from './userReducer'
+import userReducer from '@store/userReducer'
 
 const makeStore = () => configureStore({
 	reducer: {

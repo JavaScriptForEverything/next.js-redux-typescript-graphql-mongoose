@@ -2,8 +2,8 @@ import { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client'
 
-import { wrapper } from 'store'
-import Layout from './layout'
+import { wrapper } from '@store/index'
+import Layout from '@layout/index'
 
 
 // eslint-disable-next-line @typescript-eslint/ban-types
@@ -43,7 +43,7 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
 		</ApolloProvider>
 	)
 }
-// export default MyApp
+// export default wrapper.withRedux(MyApp)
 export default wrapper.withRedux(MyApp)
 
 

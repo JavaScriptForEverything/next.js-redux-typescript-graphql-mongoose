@@ -1,4 +1,4 @@
-import { userResolvers } from './userResolvers'
+import { userResolvers } from '@graphql/resolvers/userResolvers'
 
 const rootResolvers = {}
 

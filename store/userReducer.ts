@@ -1,7 +1,7 @@
 import { HYDRATE } from 'next-redux-wrapper'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { AppDispatch, RootState } from 'store'
-import { UserDocument } from 'shared/types/user'
+import { AppDispatch } from '@store/index'
+import { UserDocument } from '@shared/types/user'
 
 type TInitialState = {
 	loading: boolean
@@ -40,6 +40,7 @@ const { reducer, actions } = createSlice({
 		})
 	},
 	extraReducers: {
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		[HYDRATE]: (state, action: PayloadAction<any>) => ({
 			...state, 												// state = all slices: userSlice + productSlice + ...
 			user: { 													// userSlice
@@ -51,6 +52,7 @@ const { reducer, actions } = createSlice({
 })
 export default reducer
 
+// /pages/index.tsx 	: getServerSideProps
 export const getUserById = () => async (dispatch: AppDispatch) => {
 	dispatch( actions.requested() )
 	const user = {

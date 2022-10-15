@@ -1,7 +1,7 @@
-import type { NextPageWithLayout } from './_app'
+import type { NextPageWithLayout } from '@pages/_app'
 
 import Typography from '@mui/material/Typography'
-import Footer from './layout/footer'
+import Footer from '@layout/footer'
 
 
 const About: NextPageWithLayout = () => {

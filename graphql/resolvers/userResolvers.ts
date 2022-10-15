@@ -1,4 +1,4 @@
-import User from '../../server/models/userModel'
+import User from '@server/models/userModel'
 
 type InputProps = {
 	name: string

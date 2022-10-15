@@ -1,5 +1,5 @@
 import { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
-import type { Post } from './index'
+import type { Post } from '@pages/posts/index'
 
 import Typography from '@mui/material/Typography'
 

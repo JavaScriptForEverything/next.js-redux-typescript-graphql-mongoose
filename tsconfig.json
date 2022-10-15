@@ -2,11 +2,15 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/components/*": [ "components/*" ],
-      "@/pages/*": [ "pages/*" ],
+      "@components/*": [ "components/*" ],
+      "@pages/*": [ "pages/*" ],
       "@layout/*": [ "layout/*" ],
       "@docs/*": [ "docs/*" ],
-      "@util/*": [ "util/*" ]
+      "@util/*": [ "util/*" ],
+			"@server/*" : ["server/*"],
+			"@store/*" : ["store/*"],
+			"@graphql/*" : ["graphql/*"],
+			"@shared/*" : ["shared/*"],
     },
     "target": "es5",
     "lib": [

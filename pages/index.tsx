@@ -1,9 +1,9 @@
 import { useQuery } from '@apollo/client'
-import { UserDocument } from 'shared/types/user'
-import { GET_USERS_QUERY } from 'graphql/queries'
 import { useSelector } from 'react-redux'
-import { RootState, wrapper } from 'store'
-import  * as userReducer from 'store/userReducer'
+import { UserDocument } from '@shared/types/user'
+import { GET_USERS_QUERY } from '@graphql/queries'
+import { RootState, wrapper } from '@store/index'
+import  * as userReducer from '@store/userReducer'
 
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'

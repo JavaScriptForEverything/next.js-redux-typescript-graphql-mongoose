@@ -1,5 +1,5 @@
 import { gql } from 'apollo-server-micro';
-import { userTypeDefs } from './userTypeDefs';
+import { userTypeDefs } from '@graphql/typedefs/userTypeDefs'
 
 
 export const rootTypeDefs = gql`

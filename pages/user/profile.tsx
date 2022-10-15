@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client'
-import { UserDocument } from 'shared/types/user'
-import { GET_USER_ById_QUERY } from 'graphql/queries'
+import { UserDocument } from '@shared/types/user'
+import { GET_USER_ById_QUERY } from '@graphql/queries'
 
 import Typography from '@mui/material/Typography'
 
